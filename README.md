@@ -34,4 +34,4 @@ if (cRight > 0) {
 **Jose de-Choco** | 2026
 
 My first Project and made to learn C++.
-All future projects can be found at my [Github Page](
+All future projects can be found at my [Github Page](https://github.com/Jose-de-Choco)
