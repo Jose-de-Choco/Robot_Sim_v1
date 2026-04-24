@@ -2,14 +2,14 @@
 
 This project written in C++ aims to simulate how a simple walking robot could
 move by using printed messages and Numerical input and character and word
-commands.
+commands (see lexical commands).
 
 Controls:
 
 **Lexical Commands**
 
 * **_r_** Puts the robot into **reverse** gear.
-* **_f_** Puuts the robot back into  **forward** gear.
+* **_f_** Puts the robot back into  **forward** gear.
 * **_displace_** displays the robot's linear displacement.
 * **_off_** breaks the 'while' loop and completes the code.
 
