@@ -1,0 +1,107 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cctype>
+using namespace std;
+
+bool pwr = true;
+int moveDir = 1;
+int turnSpd = 5, faceAngle = 0;
+int moveSpd = 1, displace = 0;
+int cRight = 0, cLeft = 0, cMove = 0;
+string input;
+
+void right(int r) {
+    int angleRight = (r * turnSpd);
+    faceAngle += angleRight;
+    if (faceAngle >= 360) {
+        faceAngle = 359;
+    }
+    cout << "You are facing " << faceAngle << " degrees.\n";
+}
+
+void left(int l) {
+    int angleLeft = (l * turnSpd);
+    faceAngle -= angleLeft;
+    if (faceAngle < 0) {
+        faceAngle = 0;
+    }
+    cout << "You are facing " << faceAngle << " degrees.\n";
+}
+
+void move(int m) {
+    displace += (m * moveDir);
+    if (moveDir > 0) {
+        cout << "Moved " << m << "cm Forward.\n";
+    } else if (moveDir < 0) {
+        cout << "Moved " << m << "cm Backwards.\n";
+    }
+}
+
+bool digitCheck(string& str) {
+    if (str.empty()) return false;
+    return all_of(str.begin(), str.end(), [](unsigned char c) {return isdigit(c); });
+}
+
+int main() {
+    while (pwr == 1) {
+        bool isNum = false;
+        cin >> input;
+        if (input == "f") {
+            moveDir = 1;
+            cout << "In Forward Gear\n";
+        } else if (input == "r") {
+            moveDir = -1;
+            cout << "In Reverse Gear\n";
+        } else if (input == "displace") {
+            cout << "Total Displacement: " << displace << " cm\n\n";
+            continue;
+        } else if (input == "off") {
+            break;
+        } else  if (digitCheck(input)) {
+            isNum = true;
+        } else {
+            continue;
+        }
+        if (isNum = true) {
+            for (char x : input) {
+                if (x == '2') {
+                    cLeft ++;
+                    continue;
+                } else if (x == '7') {
+                    cRight ++;
+                    continue;
+                } else if (x == '5') {
+                    cMove ++;
+                    continue;
+                } else {
+                    continue;
+                }
+            }
+        }
+        if (cRight > cLeft) {
+            cRight -= cLeft;
+            cLeft = 0;
+        } else if (cRight < cLeft) {
+            cLeft -= cRight;
+            cRight = 0;
+        } else if (cRight ==  cLeft) {
+            cRight = 0;
+            cLeft = 0;
+        }
+        if (cMove > 0) {
+            move(cMove);
+        }
+        if (cRight > 0) {
+            right(cRight);
+        }
+        if (cLeft > 0) {
+            left(cLeft);
+        }
+        cout << "\n";
+        cMove = 0;
+        cRight = 0;
+        cLeft = 0;
+    }
+    return 0;
+}
