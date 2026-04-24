@@ -63,9 +63,9 @@ int main() {
         } else {
             continue;
         }
-        if (isNum = true) {
+        if (isNum == true) {
             for (char x : input) {
-                if (x == '2') {
+                if (x == '3') {
                     cLeft ++;
                     continue;
                 } else if (x == '7') {
