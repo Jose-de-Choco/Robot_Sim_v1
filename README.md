@@ -1,5 +1,4 @@
-#Robot Simulator
-#####version 1.0
+**Robot Simulator**
 
 This project written in C++ aims to simulate how a simple walking robot could
 move by using printed messages and Numerical input and character and word
@@ -7,14 +6,14 @@ commands.
 
 Controls:
 
-###**Lexical Commands**
+**Lexical Commands**
 
 * **_r_** Puts the robot into **reverse** gear.
 * **_f_** Puuts the robot back into  **forward** gear.
 * **_displace_** displays the robot's linear displacement.
 * **_off_** breaks the 'while' loop and completes the code.
 
-###**Numerical Commands**
+**Numerical Commands**
 
 * Every **_5_** Entered into the input window will make the robot move 1cm in the desired direction.
 * Every **_7_** Entered into the input window will make the robot face 5 degrees to the right.
@@ -34,6 +33,5 @@ if (cRight > 0) {
 ---
 **Jose de-Choco** | 2026
 
-My first Project and made to learn C++.
 My first Project and made to learn C++.
 All future projects can be found at my [Github Page](
